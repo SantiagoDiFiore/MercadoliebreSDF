@@ -3,7 +3,7 @@ const path = require('path');
 
 const app = express();
 
-const publicPath = path.resolve(__dirname, './public');
+const publicPath = path.resolve(__dirname, './Public');
 app.use (express.static(publicPath) );
 
 app.listen(process.env.PORT || 3000,function()  {
@@ -11,13 +11,13 @@ app.listen(process.env.PORT || 3000,function()  {
 });
 
 app.get('/', (req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/home.html'))
+    res.sendFile(path.resolve(__dirname,'./Views/home.html'))
 })
 
 app.get('/register', (req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/register.html'))
+    res.sendFile(path.resolve(__dirname,'./Views/register.html'))
 })
 
 app.get('/login', (req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/login.html'))
+    res.sendFile(path.resolve(__dirname,'./Views/login.html'))
 })
